@@ -1,0 +1,8 @@
+*.pdf
+*.png
+*.bmp
+*.aux
+*.fls
+*.log
+*.fdb_latexmk
+__pycache__
