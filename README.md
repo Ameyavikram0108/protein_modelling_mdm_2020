@@ -3,12 +3,12 @@
 This repository contains Python modules and functions for interacting with
 protein prediction data from
 [BrisSynBio](http://www.bristol.ac.uk/brissynbio/). Note that a recent version
-of the 'bipython' package is required to run this code.
+of the 'biopython' package is required to run this code.
 
 This project is based on a 2019 project by Alex Brown, James Cass, Cheuk Ho
 Chan, Imogen Taylor, and Weicheng Zhu.
 
-## Code from the 2019 project
+## Code from the 2019 project:
 
 **protein.py**
 
