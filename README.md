@@ -1,4 +1,7 @@
-# Protein Modelling MDM Project
+# Protein Modelling MDM Project 2020
+
+**Nico Marrin, Luca Consiglio, Ameya Vikram, Liu Weisheng, Dominique
+Djanal-Mann **
 
 This repository contains Python modules and functions for interacting with
 protein prediction data from
