@@ -1,2 +1,4 @@
+- Define a new function 'get_score(rp,sim)' which reads the score for a given
+  protein simulation by reading the file given by Fabio
 - Generate data for potential function in a format which can be interpreted in
-  Matlab, send to Weisheng
+  Matlab, send to Weisheng/(everyone)
