@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 
 ## PUT PATH TO PDB FILES HERE ####
 
-PDBPATH = r'F:\Downloads\eng_data'
+PDBPATH = r'../rp_relax'
 
 ## Make a dictionary of module start and end points ##
 
@@ -118,7 +118,7 @@ def pdb_filename(rp, sim):
     and simulation number 'sim'
     e.g. pdb_filename(1,1) -> '.../1/rp1_0001.pdb'
     """
-    path = r'{}\{}\rp{}_{:04}.pdb'.format(PDBPATH, rp, rp, sim)
+    path = r'{}/rp{}_{:04}.pdb'.format(PDBPATH, rp, sim)
     #print(path)
     return path
 
