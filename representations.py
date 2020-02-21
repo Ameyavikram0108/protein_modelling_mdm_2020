@@ -14,7 +14,8 @@ protein data
 It uses data from the file representationdata.txt, containing all centroids and
 endpoints of the modules in the data.
 
-(To see how the file representationdata.txt was generated see *.py)
+(To see how the file representationdata.txt was generated see
+generate_representation_matrix.py)
 
 Parameters for each distribution (lengths, angles and dihedrals) are then
 calculated. Use get_parameters(rp,sim,rep) to obtain a vector of parameteres

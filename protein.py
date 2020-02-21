@@ -160,7 +160,6 @@ def get_CA_coords(rp, sim):
 def get_centroid_vector(module):
     """
     Get the centroid of a module (a numpy matrix of coordinates) as a vector
-
     eg. x = get_CA_coords(1,1)
     v = get_centroid_vector(x[0])
     """

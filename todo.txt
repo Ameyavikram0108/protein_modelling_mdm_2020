@@ -1,2 +1,2 @@
-- Convert the notebook files to normal python scripts
-- Simplify process for importing the data
+- Generate data for potential function in a format which can be interpreted in
+  Matlab, send to Weisheng
