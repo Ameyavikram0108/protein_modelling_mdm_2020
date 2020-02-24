@@ -19,3 +19,31 @@ hold on
 
 edges = min(energies):2:max(energies);
 histogram(energies,edges)
+
+% Histograms of some parameter values:
+figure(2)
+clf
+hold on
+
+histogram(params(:,6));
+xline(mean(params(:,6)),'--r','linewidth',2);
+
+% Mean (equlibrium?) values for each parameter:
+
+meanparams = mean(params,1);
+
+% A basic quadratic potential function:
+V1 = @(sim) sum((params(sim)-meanparams).^2);
+
+energies1 = zeros(100,1);
+
+for n = 1:100
+	energies1(n) = V1(n);
+end
+
+figure(3)
+clf
+hold on
+scatter(energies,energies1);
+R = corr(energies,energies1)
+
