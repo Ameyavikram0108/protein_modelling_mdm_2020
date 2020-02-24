@@ -34,7 +34,7 @@ title('histogram of one of the parameter values')
 
 meanparams = mean(params,1);
 
-% A basic quadratic potential function:
+% Trying out a (very!) basic quadratic potential function:
 V1 = @(sim) sum((params(sim)-meanparams).^2);
 
 energies1 = zeros(100,1);
@@ -48,7 +48,7 @@ clf
 hold on
 scatter(energies,energies1,'xk');
 R = corr(energies,energies1)
-title('comparing actual energy values with estimated values (R=0.1034)')
+title('comparing actual energy values with estimated values')
 xlabel('actual energy values')
 ylabel('estimated energy values')
 
