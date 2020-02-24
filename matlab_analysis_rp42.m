@@ -19,6 +19,7 @@ hold on
 
 edges = min(energies):2:max(energies);
 histogram(energies,edges)
+title('histogram of energy values')
 
 % Histograms of some parameter values:
 figure(2)
@@ -27,6 +28,7 @@ hold on
 
 histogram(params(:,6));
 xline(mean(params(:,6)),'--r','linewidth',2);
+title('histogram of one of the parameter values')
 
 % Mean (equlibrium?) values for each parameter:
 
@@ -44,6 +46,9 @@ end
 figure(3)
 clf
 hold on
-scatter(energies,energies1);
+scatter(energies,energies1,'xk');
 R = corr(energies,energies1)
+title('comparing actual energy values with estimated values (R=0.1034)')
+xlabel('actual energy values')
+ylabel('estimated energy values')
 
