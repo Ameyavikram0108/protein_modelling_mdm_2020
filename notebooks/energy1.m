@@ -1,3 +1,6 @@
+% a function flie with same function as 'energy' function in regression file
+% don't run this file in python or matlab, but put this file and
+% regression.m and two '.csv' files together in the same folder.
 function f = energy1(beta,x)
 f=beta(1)*((x(:,1)).^2)+ beta(2)*((x(:,2)).^2)+ ...
 beta(3)*((x(:,3)).^2)+ beta(4)*((x(:,4)).^2)+ ...
