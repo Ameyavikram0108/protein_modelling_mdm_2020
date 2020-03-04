@@ -6,6 +6,7 @@ import representations as rep
 import mechanics as mc
 import scipy.optimize as sop
 import matplotlib.pyplot as plt
+from scipy.stats.stats import pearsonr
 
 rp = 42
 
@@ -36,6 +37,9 @@ def V(p,K):
 V_vals = [V(P[sim],Kopt) for sim in range(100)]
 
 plt.scatter(E,V_vals)
+
+print(pearsonr(E,V_vals))
+
 ax = plt.gca()
 ax.set_aspect('equal')
 plt.show()
