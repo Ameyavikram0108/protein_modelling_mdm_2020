@@ -16,24 +16,27 @@ P = np.array([rep.get_parameters(rp,sim,'CE') for sim in range(1,101)])
 
 pm = np.mean(P,0)
 
-def Vq(p,K):
-    """A quadratic potential function with coefficients given by K"""
-    return K[0] + (p-pm)**2 @ K[1:] 
+d = 2
 
 def Vp(p,K,d):
     """A polynomial potential function of degree d with coefficients given by
-    the matrix K"""
-    return K[0,0] + sum((p-pm)**gamma @ K[gamma,1:] for gamma in range(2,d+1))
+    the matrix K
+    """
+    return K[0,0] + sum((p-pm)**gamma @ K[gamma-2,1:] for gamma in range(2,d+1))
 
 def rho(K):
     """The sum of squared errors across all simulations
     (which we attempt to minimize)
     """
-    return sum((E[sim] - V(P[sim],K))**2 for sim in range(100))
+    return sum((E[sim] - Vp(P[sim],K,d))**2 for sim in range(100))
+
 
 N = len(P[0])
 
-K0 = np.ones(N+1)
+K0 = np.ones((d-1,N+1))
+
+print(K0[0,0])
+print(K0[0,1:])
 
 print(rho(K0))
 
@@ -43,7 +46,7 @@ print(Kopt)
 print(rho(Kopt))
 
 
-V_vals = [Vp(P[sim],Kopt) for sim in range(100)]
+V_vals = [Vp(P[sim],Kopt,d) for sim in range(100)]
 
 plt.scatter(E,V_vals)
 xx = np.linspace(min(V_vals),max(V_vals),1000)
