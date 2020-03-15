@@ -1,2 +1,3 @@
-- Generate data for potential function in a format which can be interpreted in
-  Matlab, send to Weisheng/(everyone)
+- Documentation for the python regression scripts
+- Finish the polynomial regression script
+
