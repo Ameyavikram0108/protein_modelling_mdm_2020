@@ -32,7 +32,7 @@ def Vp(p,K,d):
     """A polynomial potential function of degree d with coefficients given by
     the vector K
     """
-    return (K[0] + sum(abs(p-pm)**gamma @ K[N*(gamma-2) + 1 : N*(gamma-1) +
+    return (K[0] + sum(abs(p-K[1:N+1])**gamma @ K[N*(gamma-1) + 1 : N*gamma +
         1] for gamma in range(2,d+1)) )
 
 def rho(K):
@@ -43,13 +43,20 @@ def rho(K):
 
 
 
-K0 = np.ones((d-1)*N + 1)
+K0 = np.ones(d*N + 1)
 K0[0] = -2000
+K0[1:N+1] = pm
 
 Kopt = sop.minimize(rho,K0)['x']
 
 print('Optimized coefficients:')
 print(Kopt)
+
+print('Parameter means')
+print(pm)
+
+print('Differences between parameter means and calculated equilibria:')
+print(Kopt[1:N+1]-pm)
 
 print('Total error squared after optimization = ',rho(Kopt))
 
