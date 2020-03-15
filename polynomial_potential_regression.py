@@ -9,6 +9,9 @@ import mechanics as mc
 import scipy.optimize as sop
 import matplotlib.pyplot as plt
 from scipy.stats.stats import pearsonr
+import time
+
+t0 = time.time()
 
 rp = 42
 
@@ -20,13 +23,13 @@ pm = np.mean(P,0)
 
 N = len(P[0])
 
-d = 2
+d = 3
 
 def Vp(p,K,d):
     """A polynomial potential function of degree d with coefficients given by
-    the matrix K
+    the vector K
     """
-    return K[0] + sum((p-pm)**gamma @ K[gamma-2,1:] for gamma in range(2,d+1))
+    return K[0] + sum(abs(p-pm)**gamma @ K[N*(gamma-2) + 1 : N*(gamma-1) + 1] for gamma in range(2,d+1))
 
 def rho(K):
     """The sum of squared errors across all simulations
@@ -36,10 +39,7 @@ def rho(K):
 
 
 
-K0 = np.ones((d-1,N+1))
-
-print(K0[0,0])
-print(K0[0,1:])
+K0 = np.ones((d-1)*N + 1)
 
 print(rho(K0))
 
@@ -60,4 +60,9 @@ print('Correlation Coefficient =',pearsonr(E,V_vals)[0])
 
 ax = plt.gca()
 ax.set_aspect('equal')
+
+tf = time.time()
+print('time taken = ', tf-t0, 'seconds')
+
+
 plt.show()
