@@ -42,7 +42,6 @@ def rho(K):
     return sum(abs(E[sim] - Vp(P[sim],K,d))**2 for sim in range(100))
 
 
-
 K0 = np.ones((d-1)*N + 1)
 K0[0] = -2000
 
