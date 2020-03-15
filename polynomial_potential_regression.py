@@ -13,7 +13,9 @@ import time
 
 t0 = time.time()
 
-rp = 42
+rp = 1
+
+print('protein number: ',rp)
 
 E = np.array([mc.get_energy(rp,sim) for sim in range(1,101)])
 
@@ -23,7 +25,7 @@ pm = np.mean(P,0)
 
 N = len(P[0])
 
-d = 3
+d = 4
 
 def Vp(p,K,d):
     """A polynomial potential function of degree d with coefficients given by
@@ -41,13 +43,12 @@ def rho(K):
 
 K0 = np.ones((d-1)*N + 1)
 
-print(rho(K0))
-
 Kopt = sop.minimize(rho,K0)['x']
 
+print('Optimized coefficients:')
 print(Kopt)
-print(rho(Kopt))
 
+print('Total error squared after optimization = ',rho(Kopt))
 
 V_vals = [Vp(P[sim],Kopt,d) for sim in range(100)]
 
@@ -62,7 +63,6 @@ ax = plt.gca()
 ax.set_aspect('equal')
 
 tf = time.time()
-print('time taken = ', tf-t0, 'seconds')
-
+print('time taken for computation = ', tf-t0, 'seconds')
 
 plt.show()
