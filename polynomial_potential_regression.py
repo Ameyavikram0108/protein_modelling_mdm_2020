@@ -13,7 +13,7 @@ import time
 
 t0 = time.time()
 
-rp = 42
+rp = 77
 
 print('protein number: ',rp)
 
@@ -43,7 +43,6 @@ def rho(K):
 
 
 K0 = np.ones((d-1)*N + 1)
-K0[0] = -2000
 
 Kopt = sop.minimize(rho,K0)['x']
 
@@ -63,8 +62,7 @@ ax.plot(xx,xx,'--k')
 ax.set_xlabel("$E(\mathbf{p})$")
 ax.set_ylabel("$V(\mathbf{p})$")
 ax.set_title("""Scatter plot of predicted energy values against measured energy
-        values - Order {} Polynomial Model for Protein {} R^2 =
-        {:.3f}""".format(d,rp,R2))
+        values - Order {} Polynomial Model for Protein {} """.format(d,rp,R2))
 
 
 ax = plt.gca()
