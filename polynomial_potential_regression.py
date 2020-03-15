@@ -1,5 +1,7 @@
-# A script which uses scipy's simple sum-of-squares minimisation to estimate
-# the coefficients of the potential function given the energy data.
+# This script is to test a possible generalisation of the quadratic potential
+# model - including higher order terms in the potential functions for each
+# variable with unknown coefficients that are solved for via the least-squares
+# method.
 
 import numpy as np
 import representations as rep
