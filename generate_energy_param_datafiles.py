@@ -17,4 +17,4 @@ with open(enfilename,'w+') as enfile:
 
 with open(paramfilename,'w+') as paramfile:
     for sim in range(1,101):
-        paramfile.write(str(list(rep.get_parameters(rp,sim,'C')))[1:-1] + '\n')
+        paramfile.write(str(list(rep.get_parameters(rp,sim,'CE')))[1:-1] + '\n')
