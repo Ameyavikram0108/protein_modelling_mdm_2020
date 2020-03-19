@@ -13,7 +13,7 @@ import time
 
 t0 = time.time()
 
-rp = 77
+rp = 42
 
 print('protein number: ',rp)
 
@@ -63,7 +63,6 @@ ax.set_xlabel("$E(\mathbf{p})$")
 ax.set_ylabel("$V(\mathbf{p})$")
 ax.set_title("""Scatter plot of predicted energy values against measured energy
         values - Order {} Polynomial Model for Protein {} """.format(d,rp,R2))
-
 
 ax = plt.gca()
 ax.set_aspect('equal')
