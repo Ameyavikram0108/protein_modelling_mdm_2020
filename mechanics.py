@@ -8,6 +8,8 @@ dynamics.
 """
 
 import csv
+import representations as rps
+
 
 def get_label(rp,sim):
     """Gives the shortened filename for a given protein/simulation
@@ -30,3 +32,12 @@ def get_energy(rp,sim):
     """Returns the energy value for a given protein/simulation by retrieving it
     from the energy data dictionary."""
     return energy_data[get_label(rp,sim)]
+
+def get_Crep_network_lengths(rp,sim):
+    vectors = rps.get_centroids(rp,sim)
+    vso = [vectors[i+1] - vectors[i] for i in range(len(vectors)-1)]  
+    vsx = [vectors[i+2] - vectors[i] for i in range(len(vectors)-2)]
+    vs = vso + vsx
+    return [v.norm() for v in vs]
+
+print(get_Crep_network_lengths(1,1))
