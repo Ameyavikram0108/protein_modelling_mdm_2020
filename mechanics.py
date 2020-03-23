@@ -33,11 +33,16 @@ def get_energy(rp,sim):
     from the energy data dictionary."""
     return energy_data[get_label(rp,sim)]
 
-def get_Crep_network_lengths(rp,sim):
+def get_centroid_network_lengths(rp,sim):
     vectors = rps.get_centroids(rp,sim)
     vso = [vectors[i+1] - vectors[i] for i in range(len(vectors)-1)]  
     vsx = [vectors[i+2] - vectors[i] for i in range(len(vectors)-2)]
     vs = vso + vsx
     return [v.norm() for v in vs]
 
-print(get_Crep_network_lengths(1,1))
+def get_CE_network_lengths(rp,sim):
+    vectors = rps.get_centroids_and_endpoints(rp,sim)
+    vso = [vectors[i+1] - vectors[i] for i in range(len(vectors)-1)]  
+    vsx = [vectors[i+2] - vectors[i] for i in range(len(vectors)-2)]
+    vs = vso + vsx
+    return [v.norm() for v in vs]
