@@ -28,4 +28,5 @@ R2 = stats(1);
 % The adjusted R^2 statistic:
 Rbar2 = 1 - (1-R2)*(n-1)/(n - p -1)
 
-scatter(X*b,E)
+figure(1);
+scatter(X*b,E);
