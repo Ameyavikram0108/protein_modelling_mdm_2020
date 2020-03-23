@@ -17,4 +17,4 @@ with open(enfilename,'w+') as enfile:
 
 with open(paramfilename,'w+') as paramfile:
     for sim in range(1,101):
-        paramfile.write(str(list(mc.get_centroid_network_lengths(rp,sim)))[1:-1] + '\n')
+        paramfile.write(str(list(mc.get_CE_network_lengths(rp,sim)))[1:-1] + '\n')
