@@ -6,7 +6,9 @@ P = csvread('rp42params.csv');
 
 Pbar = mean(P,1);
 
-Q = (P - Pbar).^2;
+dP = P - Pbar;
+
+Q = dP.^2
 
 X = [ones(length(E),1) Q];
 
