@@ -2,7 +2,7 @@
 
 E = csvread('rp42energies.csv');
 
-P = csvread('rp42params.csv');
+P = csvread('rp42_ENM_params.csv');
 
 n = length(E);
 
