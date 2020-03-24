@@ -6,7 +6,7 @@ import numpy as np
 import representations as rep
 import mechanics as mc
 
-rp = 42 # random choice of protein
+rp = 1 # random choice of protein
 
 enfilename = 'rp' + str(rp) + 'energies.csv'
 paramfilename = 'rp' + str(rp) + '_ENM_params.csv'
