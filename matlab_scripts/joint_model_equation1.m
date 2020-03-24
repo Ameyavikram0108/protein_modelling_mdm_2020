@@ -1,6 +1,6 @@
 
 format long
-x=csvread('rp42params1.csv');
+x=csvread('rp42params.csv');
 x1=x-mean(x,1);
 x1_sin=sin(x1);
 x1_cos=cos(x1);
