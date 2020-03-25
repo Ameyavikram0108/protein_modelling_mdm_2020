@@ -3,13 +3,13 @@
 # (matlab/excel/?)
 
 import numpy as np
-import representations as rps
+import representations as rep
 import mechanics as mc
 
-rp = 42 # random choice of protein
+rp = 1 # random choice of protein
 
 enfilename = 'rp' + str(rp) + 'energies.csv'
-paramfilename = 'rp' + str(rp) + 'params.csv'
+paramfilename = 'rp' + str(rp) + '_ENM_params.csv'
 
 with open(enfilename,'w+') as enfile:
     for sim in range(1,101):
@@ -17,4 +17,4 @@ with open(enfilename,'w+') as enfile:
 
 with open(paramfilename,'w+') as paramfile:
     for sim in range(1,101):
-        paramfile.write(str(list(rps.get_parameters(rp,sim,rep='CE')))[1:-1] + '\n')
+        paramfile.write(str(list(mc.get_CE_network_lengths(rp,sim)))[1:-1] + '\n')
